@@ -1,0 +1,42 @@
+with open("input.txt") as input_file:
+    data = input_file.readlines()
+
+for level in data:
+    
+    level = level.strip().split(" ")
+    print(level)
+    l, r = 0, 1
+    lastdiff = 0
+    count = 0
+    while r < len(level):
+        diff = int(level[l]) - int(level[r])
+        print(diff)
+        if diff > 0:
+            sign = 1
+        elif diff < 0:
+            sign = -1
+        else:
+            sign = 0
+
+        if not (diff > 0 and diff < 4):
+            count += 1
+            pass
+        if sign != lastdiff:
+            count += 1
+            pass
+        lastdiff = sign
+        l += 1
+        r += 1
+
+print(count)
+
+    
+    
+
+        
+
+
+
+
+        
+
